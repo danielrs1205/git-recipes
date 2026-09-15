@@ -5,18 +5,27 @@ const btnAdd = document.getElementById("btn-add") as HTMLButtonElement | null;
 const inpName = document.getElementById(
   "inp-name",
 ) as HTMLInputElement | null;
+const inpTime = document.getElementById(
+  "inp-time",
+) as HTMLInputElement;
 const inpCategory = document.getElementById(
   "inp-category",
 ) as HTMLSelectElement | null;
 
 const mainRecipeList = new RecipeList();
 
-if (btnAdd && inpName && inpCategory) {
+if (btnAdd && inpName && inpCategory && inpTime) {
   btnAdd.addEventListener("click", () => {
     const recipesErrorContainer = document.getElementById("add-recipes-error");
     const recipesError = document.getElementById("add-recipes-error-msg");
     try {
-      const newRecipe = new Recipe(inpName.value);
+      const numericTime: number = inpTime.valueAsNumber;
+
+      if (Number.isNaN(numericTime) || numericTime < 0) {
+        throw new Error("El tiempo de preparación debe ser un número mayor o igual a 0.");
+      }
+      
+      const newRecipe = new Recipe(inpName.value, numericTime);
       newRecipe.category = inpCategory.value;
       mainRecipeList.add(newRecipe);
       clearInputs(inpName, inpCategory);

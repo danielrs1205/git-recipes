@@ -81,6 +81,21 @@
                       required
                     />
                   </div>
+                </div><br>
+                <div class="row">
+                  <div class="col-sm">
+                    <label for="inp-time" class="form-label">Tiempo de preparación:</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="inp-time"
+                        name="time"
+                        min="0"
+                        placeholder = "Ingrese tiempo de preparación"
+                        step="1"
+                        required
+                      </>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="col-sm pt-3">
@@ -102,7 +117,7 @@
                   <p class="text-danger pt-2" id="add-recipes-error-msg"></p>
                 </div>
                 <div class="row-sm py-3 text-end">
-                  <button id="btn-add" type="button" class="btn btn-primary">
+                  <button id="btn-add" type="submit"  class="btn btn-primary">
                     Agregar
                   </button>
                 </div>
