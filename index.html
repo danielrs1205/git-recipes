@@ -84,6 +84,21 @@
                 </div>
                 <div class="row">
                   <div class="col-sm pt-3">
+                    <label for="inp-time" class="form-label">Tiempo de preparación:</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inp-time"
+                      name="prepTime"
+                      min="0"
+                      step="1"
+                      placeholder="Ingrese el tiempo en minutos"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm pt-3">
                     <label for="inp-category" class="form-label">Categoría:</label>
                     <select class="form-select" id="inp-category" name="category">
                       <option value="" selected>Seleccione una categoría</option>
